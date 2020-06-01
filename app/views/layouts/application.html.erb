@@ -7,6 +7,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <header class="head"><H1>WELCOME TO GIT-TEST</h1></header>
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <%=link_to "GIT-TEST",root_path,class: 'navbar-brand'%>
+        <%=render 'nav'%>
+      </nav>
+      <div class="row">
+        <aside class="col-md-3"><%=render 'left'%></aside>
+    	<article class="col-md-6"><%= yield %></article>
+    	<aside class="col-md-3"><%=render 'right'%></aside>
+      </div>
+      <footer class="foot"><h4>THANK YOU FOR VISITING</h4></footer>
+    </div>
   </body>
 </html>
