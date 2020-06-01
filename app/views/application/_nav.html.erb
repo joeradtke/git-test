@@ -1,5 +1,15 @@
 <ul class="navbar-nav w-100 nav-justified">
-  <%=raw here("Here",root_path)%>
+  <%=raw here("Home",root_path)%>
   <%=raw here("About",about_path)%>
   <%=raw here("Contact",contact_path)%>
+  <%if logged_in?%>
+    <%=raw here("Profile",edit_user_path(current_user))%>
+    <%=raw here("Logout",logout_path)%>
+    <%if admin?%>
+      <%=raw here("Admin",rails_admin_path)%>
+    <%end%>
+  <%else%>
+    <%=raw here("Register",new_user_path)%>
+    <%=raw here("Login",login_path)%>
+  <%end%>
 </ul>
